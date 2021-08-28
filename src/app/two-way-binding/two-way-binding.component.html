@@ -1,0 +1,12 @@
+<label for="username">Username</label>
+<input 
+    type="text" 
+    class="form-control" 
+    placeholder="username" 
+    [(ngModel)]="username">
+<br/>
+<div class="valueField" [hidden]="username === ''">
+    <label for="Value">Value from input field</label><p>{{username}}</p>
+</div>
+<br/>
+<button class="btn btn-outline-primary" [disabled]="username === ''" (click)="resetUserName()">Reset</button>
