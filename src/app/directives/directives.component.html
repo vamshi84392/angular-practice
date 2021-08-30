@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" (click)="onDisplayDetailsClick()">Display Details</button>
+            <br/>
+            <p [hidden]="toggleParagraph">This is a test paragraph!</p> 
+            <div *ngFor="let number of clicks">
+                <p *ngIf="number <= 5; else elseBlock">{{number}}</p>
+                <ng-template #elseBlock>
+                    <p
+                        [ngStyle]="{backgroundColor: getBackgroudColor(number)}"
+                        [ngClass]="{online: number >= 5}">
+                        {{number}}
+                    </p>
+                </ng-template> 
+            </div>
+        </div>
+    </div>
+</div>
